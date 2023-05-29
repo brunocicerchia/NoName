@@ -1,0 +1,24 @@
+.nav {
+    background-color: #1A1A40;
+    height: 8vh;
+}
+
+@media only screen and (max-width: 992px) {
+    .nav {
+        height: inherit;
+    }
+}
+
+.header {
+    height: 92vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/header.jpg');
+}
+
+.headerContent {
+    text-align: center;
+    color: white;
+    height: 92vh;
+}
+
+.headerItem {
+}
