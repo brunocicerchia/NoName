@@ -5,6 +5,7 @@ import styles from './HeaderComponent.css'
 import styles2 from '../globals.css'
 import 'animate.css';
 import 'hover.css';
+import Image from 'next/image';
 
 //Import Components
 import Button from 'react-bootstrap/Button';
@@ -19,8 +20,8 @@ const HeaderComponent = () => {
     return (
       <div>
         <Navbar variant='dark' expand="lg" className='nav'>
-          <Container fluid>
-            <Navbar.Brand href="#"className='titulo'>noName</Navbar.Brand>
+          <Container fluid className='animate__animated animate__bounceInDown'>
+            <Navbar.Brand href="#"className='titulo headerLeft'><u>noName</u></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -33,16 +34,21 @@ const HeaderComponent = () => {
                 <Nav.Link href="#">Precios</Nav.Link>
               </Nav>
               <Form className="d-flex">
-                <Button variant="primary" className='hvr-grow'>Prueba un mes gratis!</Button>
+                <Button variant="warning" className='hvr-grow'>Prueba un mes gratis!</Button>
               </Form>
             </Navbar.Collapse>
           </Container>
         </Navbar>
         <div className='header'>
           <Container>
-            <Row className="headerContent d-flex align-items-center justify-content-center animate__animated animate__fadeIn">
-              <Col className='headerItem subTitulo'><h2>Potencia tu emprendimiento gastronómico con nuestra solución integral para gestionar menús y pedidos online, diseñada especialmente para pequeños negocios!</h2></Col>
-              <Col className='headerItem'>2 of 2</Col>
+            <Row className="headerContent d-flex align-items-center animate__animated animate__fadeIn">
+              <Col className='headerItem'>
+                <h2 className='headerLeft subTitulo'>Tus pedidos online, todo en un lugar!</h2>
+                <h3>Potencia tu emprendimiento gastronómico con nuestra solución integral para gestionar menús y pedidos online, diseñada especialmente para pequeños negocios!</h3>
+              </Col>
+              <Col className='headerItem texto'>
+                <Image className='img-fluid' src="/header.jpg" alt="me" width="800" height="800" />
+              </Col>
             </Row>
           </Container>  
         </div>

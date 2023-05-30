@@ -1,5 +1,5 @@
 .nav {
-    background-color: #1A1A40;
+    background-color: #343B4A;
     height: 8vh;
 }
 
@@ -11,7 +11,7 @@
 
 .header {
     height: 92vh;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/header.jpg');
+    background-color: #2B313D;
 }
 
 .headerContent {
@@ -20,5 +20,6 @@
     height: 92vh;
 }
 
-.headerItem {
+.headerLeft {
+    color: #f9ca24;
 }
