@@ -6,9 +6,9 @@ import HeaderComponent from "./HeaderComponent/HeaderComponent"
 
 const Home: NextPage = () => {
   return (
-    <main className={styles.main}>
-      <HeaderComponent></HeaderComponent>
-    </main>
+      <main className={styles.main}>
+        <HeaderComponent></HeaderComponent>
+      </main>
   )
 }
 
