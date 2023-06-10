@@ -6,7 +6,7 @@ import ContentLoader from 'react-content-loader'
 function Dashboard() {
     const { data: session, status} = useSession()
     const router = useRouter()
-    console.log(session, status)
+    //console.log(session, status)
 
     if(status === 'loading') {
         return(

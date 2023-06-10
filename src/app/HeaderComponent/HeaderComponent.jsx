@@ -1,4 +1,6 @@
 "use client"; // This is a client component 👈🏽
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 //Import Style
 import styles from './HeaderComponent.css'
@@ -6,6 +8,7 @@ import styles2 from '../globals.css'
 import 'animate.css';
 import 'hover.css';
 import Image from 'next/image';
+
 
 //Import Components
 import Button from 'react-bootstrap/Button';
@@ -17,6 +20,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const HeaderComponent = () => {
+  const { data: session, status} = useSession()
+  const router = useRouter()
+
+  const handleClick = (e, path) => {
+    if (path === "/dashboard") {
+      router.push('/dashboard')
+    }
+  };
+
     return (
       <div>
         <Navbar variant='dark' expand="lg" className='nav'>
@@ -34,7 +46,7 @@ const HeaderComponent = () => {
                 <Nav.Link href="#">Precios</Nav.Link>
               </Nav>
               <Form className="d-flex">
-                <Button variant="warning" className='hvr-grow'>Prueba un mes gratis!</Button>
+                <a onClick={(e) => handleClick(e, "/dashboard")}><Button variant="warning" className='hvr-grow'>Prueba un mes gratis!</Button></a>
               </Form>
             </Navbar.Collapse>
           </Container>
