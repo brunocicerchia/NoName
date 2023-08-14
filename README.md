@@ -1,5 +1,7 @@
 -------------------------------------------------------------
 Primer programa nextjs 13 + next-auth + mongodb + bootstrap!
+Aplicacion sensilla para recibir pedidos en pequeños emprendimientos.
+Desarrollo: 25%
 -------------------------------------------------------------
 
 
