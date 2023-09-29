@@ -2,6 +2,11 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import ContentLoader from 'react-content-loader'
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
 
 function Dashboard() {
     const { data: session, status} = useSession()
@@ -32,7 +37,31 @@ function Dashboard() {
         router.push('/')
     } else {
         return(
-            <div>{session.user.name}</div>
+            <div>
+                <Navbar variant='dark' expand="lg" className='nav'>
+                    <Container fluid className='animate__animated animate__bounceInDown'>
+                        <Navbar.Brand href="#"className='titulo headerLeft'><u>Bienvenido</u></Navbar.Brand>
+                        <Navbar.Toggle aria-controls="navbarScroll" />
+                        <Navbar.Collapse id="navbarScroll">
+                        <Nav
+                            className="me-auto my-2 my-lg-0 subTitulo"
+                            style={{ maxHeight: '100px' }}
+                            navbarScroll
+                        >
+                            <Nav.Link href="#" active>Inicio</Nav.Link>
+                            <Nav.Link href="#">Mis productos</Nav.Link>
+                            <Nav.Link href="#">Configuracion</Nav.Link>
+                            <Nav.Link href="#">Estadisticas</Nav.Link>
+                            <Nav.Link href="#">Mi membresia</Nav.Link>
+                        </Nav>
+                        <Form className="d-flex">
+                            <Image src={session.user.image} width={50} height={50} roundedCircle/>
+                        </Form>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+                {session.user.name}
+            </div>
         )
     }
 

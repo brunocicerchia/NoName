@@ -21,10 +21,8 @@ import clientPromise from "./lib/mongodb"
 //}
 
 export default NextAuth({
-  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GithubProvider({
-      adapter: MongoDBAdapter(clientPromise),
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET
     }),
@@ -32,5 +30,6 @@ export default NextAuth({
       client_id: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     })
-  ]
+  ],
+  adapter: MongoDBAdapter(clientPromise),
 })
